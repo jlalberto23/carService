@@ -86,6 +86,12 @@
         <entry key="..\:/Users/hsm2_/AndroidStudioProjects/CarService/app/src/main/res/layout/fragment_modificar_usuario.xml" value="0.275" />
         <entry key="..\:/Users/hsm2_/AndroidStudioProjects/CarService/app/src/main/res/layout/fragment_usuario.xml" value="0.275" />
         <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/activity_falla.xml" value="0.25" />
+        <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/fragment_consultar_auto.xml" value="0.25" />
+        <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/fragment_consultar_cargo_e.xml" value="0.25" />
+        <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/fragment_guardar_auto.xml" value="0.25" />
+        <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/fragment_guardar_usuario.xml" value="0.25" />
+        <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/fragment_modificar_auto.xml" value="0.25" />
       </map>
     </option>
   </component>
