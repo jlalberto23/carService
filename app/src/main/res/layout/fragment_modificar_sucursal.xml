@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmets.ModificarSucursal">
+
+    <TextView
+        android:id="@+id/lblTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/modificarS"
+        android:textSize="30sp"
+        android:layout_marginTop="100sp"
+        android:layout_marginLeft="50sp"/>
+
+    <TextView
+        android:id="@+id/lblCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/id"
+        android:layout_below="@+id/lblTitulo"
+        android:layout_marginTop="80sp"
+        android:layout_marginLeft="30sp"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre_sucursal"
+        android:layout_below="@id/lblCodigo"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="30sp"/>
+
+</RelativeLayout>
