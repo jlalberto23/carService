@@ -11,9 +11,10 @@
         android:layout_width="208dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lblCodigo"
-        android:layout_marginLeft="27sp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="83dp"
         android:layout_marginRight="70sp"
-        android:layout_toRightOf="@+id/lblNombre"
+        android:layout_toRightOf="@+id/lblContra"
         android:ems="10"
         android:inputType="textPassword"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />

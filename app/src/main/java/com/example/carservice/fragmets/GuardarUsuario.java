@@ -39,7 +39,7 @@ public class GuardarUsuario extends Fragment {
         public void onClick(View v) {
             switch (v.getId())
             {
-                case R.id.btnGuardar:
+                case R.id.btnGuardarU:
                     String resp;
                     mtoUsuario usuario = new mtoUsuario();
                     usuario.setUsuario(user.getText().toString());
@@ -48,8 +48,9 @@ public class GuardarUsuario extends Fragment {
                     resp=cn.insertar(usuario);
                     cn.cerrar();
                     Toast.makeText(v.getContext(), resp, Toast.LENGTH_SHORT).show();
+                    limpiarTxt();
                     break;
-                case R.id.btnCancelar:
+                case R.id.btnCancelarU:
                     limpiarTxt();
                     break;
             }
