@@ -246,7 +246,7 @@ public class Conexion {
     public void llenarBDCarnet(){
         try {
 
-            /*POR AGREGAR: CATEGORIA_FALLA, MARCA, MODELO,TIPOAUTO,TIPOMTO*/
+            /*POR AGREGAR: , MARCA, MODELO,TIPOAUTO,TIPOMTO*/
             final int[] Codcargo = {1,2,3};
             final String[] Nomcargo = {"Administrador","Gerente","Mecanico"};
             final String[] user = {"admin","gerente1","mecanico1","cliente1","cliente2","cliente3"};
@@ -269,7 +269,23 @@ public class Conexion {
             final String[] Nomtp = {"Sedán","Hatchback","SUV"};
             final int[] Codsuc = {1,2,3};
             final String[] Nomsuc = {"Casa Matriz","Centro","San Miguel"};
-            final String[] Dirsuc = {"San Salvador","Santa Ana","San Miguel"};
+            final String[] Dirsuc = {"San Salvador","Santa Ana","San Miguel"
+            };
+            //TABLA categoria_falla
+            final int[] id_categoria_falla = {1,2,3,4,5};
+            final String[] nombre_categoria_falla = {"Chasis/Dirección","Motor/sistemas anticontaminación","Carrocería/interior","Frenos","Sistema electrico" };
+            final String[] descripcion ={"Se comprueba el estado de la suspensión, (amortiguadores, muelles, puntos de anclaje…) y de la dirección (rótulas, bomba de asistencia…)",
+            "Se centran en detectar posibles fallos de motor, incluido el sistema de escape, y sistema de transmisión (caja de cambios, diferencial..)",
+            "Se vigilar su deterioro (corrosión, faros)… así como el cinturón de seguridad y desjustes del salpicadero.",
+            "Para comprobar su eficacia y posibles fallos en el sistema de frenado (pastillas, discos, servofreno, líquidos…)",
+            "Se localizan posibles fallos eléctricos (luces en el cuadro de mandos, cierre, climatizador..)"};
+//TABLA MARCA
+            final int[] id_marca_auto = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
+            final String[] nombre_marca = {"Alfa Romeo","Aston Martin","Audi","Bentley","BMW","Cadillac","Chevrolet","Daewoo","Daihatsu","Ford","GMC","Honda","Hyundai","Isuzu","Jaguar","Jeep","Kia","Mazda","Mercedes-benz","Mini","Mitsubishi","Nissan","Suzuki","Toyota","Volkswagen"
+            };
+            final int[]  id_modelo_auto = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51};
+            
+
             abrir();
 
             db.execSQL("DELETE FROM empleado");
@@ -278,6 +294,7 @@ public class Conexion {
             db.execSQL("DELETE FROM usuario");
             db.execSQL("DELETE FROM tipoAuto");
             db.execSQL("DELETE FROM sucursal");
+            db.execSQL("DELETE FROM categoriaFalla");
 
             mtoCargoEmpleado cargo = new mtoCargoEmpleado();
             mtoUsuario usuario = new mtoUsuario();
@@ -285,6 +302,7 @@ public class Conexion {
             mtoCliente cliente = new mtoCliente();
             mtoTipoAuto tipoA = new mtoTipoAuto();
             mtoSucursal sucursal = new mtoSucursal();
+            mtocategoriaFalla categoriaFalla = new mtocategoriaFalla();
 
             for (int i=0;i<6;i++){
                 usuario.setUsuario(user[i]);
@@ -317,6 +335,7 @@ public class Conexion {
                 sucursal.setNombre_sucursal(Nomsuc[i]);
                 sucursal.setDireccion(Dirsuc[i]);
                 insertar(sucursal);
+
             }
             cerrar();
         }catch (SQLException ex){
