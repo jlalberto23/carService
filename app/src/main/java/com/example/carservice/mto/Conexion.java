@@ -2,14 +2,9 @@ package com.example.carservice.mto;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.ExpandableListAdapter;
-import android.widget.Toast;
-
-import java.util.Date;
 
 public class Conexion {
     private static final String[] cargoEmpleado = new String[]{"id_cargo","nombre_cargo"};
@@ -99,7 +94,7 @@ public class Conexion {
                 db.execSQL("CREATE TABLE detalle_mto(id_mto INTEGER NOT NULL,id_falla INTEGER NOT NULL,FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento),FOREIGN KEY(id_falla) REFERENCES falla(id_falla))");
 
                 //CREANDO TABLA FACTURA
-                db.execSQL("CREATE TABLE facturacion(id_factura INTEGER NOT NULL PRIMARY KEY,monto REAL NOT NULL,efectivo REAL NOT NULL,cambio REAL NOT NULL,fecha_factura DATETIME NOT NULL,id_mto INTEGER NOT NULL,FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento))");
+                db.execSQL("CREATE TABLE facturacion(id_factura INTEGER NOT NULL PRIMARY KEY,monto REAL NOT NULL,efectivo REAL NOT NULL,cambio REAL NOT NULL,fecha_factura VARHCAR(10) NOT NULL,id_mto INTEGER NOT NULL,FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento))");
             }catch(SQLException e){
                 e.printStackTrace();}
         }
@@ -154,19 +149,6 @@ public class Conexion {
             ex.printStackTrace();
         }
         return resp;
-    }
-
-    public String actualizar(mtoUsuario usuario){
-        try{
-            String [] id = {usuario.getUsuario()};
-            ContentValues cv = new ContentValues();
-            cv.put("contra", usuario.getContra());
-            db.update("usuario",cv,"usuario = ?", id);
-            return "REGISTRO ACTUALIZADO";
-        }catch (Exception ex){
-            ex.printStackTrace();
-            return "ERROR AL ACTUALIZAR";
-        }
     }
 
     public String insertar(mtoEmpleado empleado){
@@ -243,6 +225,150 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String insertar(mtoAuto auto){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_auto",auto.getId_auto());
+            dato.put("anio",auto.getAño());
+            dato.put("placa",auto.getPlaca());
+            dato.put("id_marca",auto.getId_marca());
+            dato.put("id_tipo_auto",auto.getId_tipo_auto());
+            contador=db.insert("auto",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
+    public String insertar(mtoCategoriaFalla catFall){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_categoria_falla",catFall.getId_categoria_falla());
+            dato.put("nombre_categoria_falla",catFall.getNombre_categoria_falla());
+            dato.put("descripcion",catFall.getDescripcion());
+            contador=db.insert("categoriaFalla",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
+    public String insertar(mtoDetalleMto detalleMto){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_mto",detalleMto.getId_mto());
+            dato.put("id_falla",detalleMto.getId_falla());
+            contador=db.insert("detalle_mto",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
+    public String insertar(mtoDiagnosticoFalla diagFall){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_diagnostico",diagFall.getId_diagnostico());
+            dato.put("id_falla",diagFall.getId_falla());
+            contador=db.insert("diagnostico_falla",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
+    public String insertar(mtoDiagnosticoMto diagMto){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_diagnostico",diagMto.getId_diagnostico_mto());
+            dato.put("descripcion",diagMto.getDescripcion());
+            contador=db.insert("diagnostico_mto",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
+    public String insertar(mtoFacturacion factura){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_factura",factura.getId_facturacion());
+            dato.put("monto",factura.getMonto());
+            dato.put("efectivo",factura.getEfectivo());
+            dato.put("cambio",factura.getCambio());
+            dato.put("fecha_factura",factura.getFecha_factura());
+            dato.put("id_mto",factura.getMonto());
+            contador=db.insert("facturacion",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
+    public String insertar(mtoFalla falla){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_falla",falla.getId_falla());
+            dato.put("descripcion_falla",falla.getDescripcion());
+            dato.put("id_categoria_falla",falla.getId_categoria_falla());
+            contador=db.insert("falla",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
+    public String insertar(mtoMantenimiento mto){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_mantenimiento",mto.getId_mto());
+            dato.put("descripcion_mto",mto.getDescripcion());
+            dato.put("fecha_mto",mto.getFecha_mto());
+            dato.put("proximo_mto",mto.getProximo_mto());
+            dato.put("estado_mto",mto.getEstado_mto());
+            dato.put("id_diagnostico",mto.getId_diagnostico());
+            dato.put("id_tipo_mto",mto.getId_tipo_mto());
+            dato.put("id_sucursal",mto.getId_sucursal());
+            dato.put("id_empleado",mto.getId_empleado());
+            contador=db.insert("falla",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
     public void llenarBDCarnet(){
         try {
 
@@ -311,7 +437,7 @@ public class Conexion {
             mtoCliente cliente = new mtoCliente();
             mtoTipoAuto tipoA = new mtoTipoAuto();
             mtoSucursal sucursal = new mtoSucursal();
-            mtocategoriaFalla categoriaFalla = new mtocategoriaFalla();
+            mtoCategoriaFalla categoriaFalla = new mtoCategoriaFalla();
 
             for (int i=0;i<6;i++){
                 usuario.setUsuario(user[i]);
