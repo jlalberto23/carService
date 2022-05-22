@@ -19,11 +19,14 @@
     <string name="menu_cargo_empleado">Cargo Empleado</string>
     <string name="menu_empleado">Empleado</string>
     <string name="menu_tipo_auto">Tipo Auto</string>
-    <string name="menu_categoria_falla">Categoria Falla</string>
+    <string name="menu_categoria_falla">Categoria de Falla</string>
+    <string name="desc_categoria_falla">Descripcion categoria falla</string>
     <string name="menu_tipo_mto">Tipo Mantenimiento</string>
     <string name="menu_modelo_auto">Modelo Auto</string>
     <string name="menu_marca_auto">Marca Auto</string>
     <string name="menu_falla">Falla</string>
+    <string name="ID_falla">ID Falla</string>
+    <string name="desc_falla">Descripcion de Falla</string>
     <string name="menu_dianostigo_mto">Diagnostico</string>
     <string name="menu_usuario">Usuario</string>
     <string name="menu_sucursal">Sucursal</string>
@@ -57,8 +60,10 @@
     <string name="nombre_modelo_auto">Modelo Auto:</string>
     <string name="nombre_marca_auto">Marca Auto:</string>
     <string name="nombre_marca">Marca Auto:</string>
+    <string name="id_auto">ID Auto:</string>
+    <string name="id_empleado">ID Empleado:</string>
     <string name="año">Año:</string>
-    <string name="marca">Placa:</string>
+    <string name="placa">Placa:</string>
     <string name="fecha_mto">Fecha Mto.:</string>
     <string name="proximo_mto">Próximo Mto.:</string>
     <string name="estado">Estado:</string>
@@ -79,6 +84,9 @@
     <string name="guardarS">GUARDAR SUCURSAL</string>
     <string name="modificarS">MODIFICAR SUCURSAL</string>
     <string name="consultarS">SUCURSALES REGISTRADOS</string>
+    <string name="consultarA">CONSULTAR AUTO</string>
+    <string name="consultarCl">CONSULTAR CLIENTE</string>
+    <string name="consultarFalla">CONSULTAR FALLA</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
