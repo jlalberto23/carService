@@ -437,7 +437,7 @@ public class Conexion {
             mtoCliente cliente = new mtoCliente();
             mtoTipoAuto tipoA = new mtoTipoAuto();
             mtoSucursal sucursal = new mtoSucursal();
-            mtocategoriaFalla categoriaFalla = new mtocategoriaFalla();
+            mtoCategoriaFalla categoriaFalla = new mtoCategoriaFalla();
 
             for (int i=0;i<6;i++){
                 usuario.setUsuario(user[i]);
