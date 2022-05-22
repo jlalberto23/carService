@@ -99,7 +99,7 @@ public class Conexion {
                 db.execSQL("CREATE TABLE detalle_mto(id_mto INTEGER NOT NULL,id_falla INTEGER NOT NULL,FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento),FOREIGN KEY(id_falla) REFERENCES falla(id_falla))");
 
                 //CREANDO TABLA FACTURA
-                db.execSQL("CREATE TABLE facturacion(id_factura INTEGER NOT NULL PRIMARY KEY,monto REAL NOT NULL,efectivo REAL NOT NULL,cambio REAL NOT NULL,fecha_factura DATETIME NOT NULL,id_mto INTEGER NOT NULL,FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento))");*/
+                db.execSQL("CREATE TABLE facturacion(id_factura INTEGER NOT NULL PRIMARY KEY,monto REAL NOT NULL,efectivo REAL NOT NULL,cambio REAL NOT NULL,fecha_factura DATETIME NOT NULL,id_mto INTEGER NOT NULL,FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento))");
             }catch(SQLException e){
                 e.printStackTrace();}
         }
