@@ -13,9 +13,7 @@ public class MenuPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
         auto = (Button) findViewById(R.id.btnAuto);
-        //cargoEmp = (Button) findViewById(R.id.btnCargoEm);
         auto.setOnClickListener(onclick);
-        cargoEmp.setOnClickListener(onclick);
     }
 
     View.OnClickListener onclick = new View.OnClickListener() {
@@ -27,42 +25,6 @@ public class MenuPrincipal extends AppCompatActivity {
                         Intent intent = new Intent(MenuPrincipal.this,Auto.class);
                         MenuPrincipal.this.startActivity(intent);
                         break;
-                  /*  case R.id.btnCargoEm:
-                        Intent intent1 = new Intent(MenuPrincipal.this,CargoEmpleado.class);
-                        MenuPrincipal.this.startActivity(intent1);
-                        break;
-                    case R.id.btnCategoriaF:
-                        intent = new Intent(MenuPrincipal.this,CategoriaFalla.class);
-                        break;
-                    case R.id.btnUsuario:
-                        intent = new Intent(MenuPrincipal.this,Usuario.class);
-                        break;
-                    case R.id.btnCliente:
-                        //intent = new Intent(MenuPrincipal.this,Usuario.class);
-                        break;
-                    case R.id.btnEmpleado:
-                        //intent = new Intent(MenuPrincipal.this,Usuario.class);
-                        break;
-                    case R.id.btnFalla:
-                        //intent = new Intent(MenuPrincipal.this,Usuario.class);
-                        break;
-                    case R.id.btnMantenimiento:
-                        //intent = new Intent(MenuPrincipal.this,Usuario.class);
-                        break;
-                    case R.id.btnMarcaA:
-                        //intent = new Intent(MenuPrincipal.this,Usuario.class);
-                        break;
-                    case R.id.btnModeloAuto:
-                        //intent = new Intent(MenuPrincipal.this,Usuario.class);
-                        break;
-                    case R.id.btnSucursal:
-                        intent = new Intent(MenuPrincipal.this,Sucursal.class);
-                        break;
-                    case R.id.btnTipoA:
-                        break;
-                    case R.id.btnTipoMto:
-                        intent = new Intent(MenuPrincipal.this,TipoMto.class);
-                        break;*/
                 }
             }catch (Exception ex)
             {
