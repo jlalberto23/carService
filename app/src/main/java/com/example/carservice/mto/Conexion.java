@@ -509,6 +509,25 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String actualizar(mtoFacturacion factura){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(factura.getId_facturacion())};
+            ContentValues cv = new ContentValues();
+            cv.put("monto",factura.getMonto());
+            cv.put("efectivo",factura.getEfectivo());
+            cv.put("cambio",factura.getCambio());
+            cv.put("fecha_factura",factura.getFecha_factura());
+            cv.put("id_mto",factura.getMonto());
+            db.update("facturacion", cv, "id_factura = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public String insertar(mtoFalla falla){
         String regInsertados="";
         long contador=0;
@@ -524,6 +543,22 @@ public class Conexion {
             ex.printStackTrace();
         }
         return regInsertados;
+    }
+
+    public String actualizar(mtoFalla falla){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(falla.getId_falla())};
+            ContentValues cv = new ContentValues();
+            cv.put("descripcion_falla",falla.getDescripcion());
+            cv.put("id_categoria_falla",falla.getId_categoria_falla());
+            db.update("falla", cv, "id_falla = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
     }
 
     public String insertar(mtoMantenimiento mto){
@@ -549,6 +584,28 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String actualizar(mtoMantenimiento mto){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(mto.getId_mto())};
+            ContentValues cv = new ContentValues();
+            cv.put("descripcion_mto",mto.getDescripcion());
+            cv.put("fecha_mto",mto.getFecha_mto());
+            cv.put("proximo_mto",mto.getProximo_mto());
+            cv.put("estado_mto",mto.getEstado_mto());
+            cv.put("id_diagnostico",mto.getId_diagnostico());
+            cv.put("id_tipo_mto",mto.getId_tipo_mto());
+            cv.put("id_sucursal",mto.getId_sucursal());
+            cv.put("id_empleado",mto.getId_empleado());
+            db.update("mantenimiento", cv, "id_mantenimiento = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public String insertar(mtoModeloAuto modelo){
         String regInsertados="";
         long contador=0;
@@ -563,6 +620,21 @@ public class Conexion {
             ex.printStackTrace();
         }
         return regInsertados;
+    }
+
+    public String actualizar(mtoModeloAuto modelo){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(modelo.getId_modelo())};
+            ContentValues cv = new ContentValues();
+            cv.put("nombre_modelo",modelo.getNombre_modelo());
+            db.update("modeloAuto", cv, "id_modelo_auto = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
     }
 
     public String insertar(mtoMarcaAuto marca){
@@ -582,6 +654,22 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String actualizar(mtoMarcaAuto marca){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(marca.getId_marca())};
+            ContentValues cv = new ContentValues();
+            cv.put("nombre_marca",marca.getNombre_marca());
+            cv.put("id_modelo_auto",marca.getId_modelo());
+            db.update("marcaAuto", cv, "id_modelo_auto = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public String insertar(mtoTipoMto tipoMto){
         String regInsertados="";
         long contador=0;
@@ -596,6 +684,21 @@ public class Conexion {
             ex.printStackTrace();
         }
         return regInsertados;
+    }
+
+    public String actualizar(mtoTipoMto tipoMto){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(tipoMto.getId_tipo_mto())};
+            ContentValues cv = new ContentValues();
+            cv.put("nombre_tipo_mto",tipoMto.getNombre_tipo_mto());
+            db.update("tipoMantenimiento", cv, "id_tipo_mto = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
     }
 
     public void llenarBDCarnet(){
