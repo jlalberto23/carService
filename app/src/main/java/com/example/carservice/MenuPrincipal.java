@@ -13,7 +13,7 @@ public class MenuPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
         auto = (Button) findViewById(R.id.btnAuto);
-        cargoEmp = (Button) findViewById(R.id.btnCargoEm);
+        //cargoEmp = (Button) findViewById(R.id.btnCargoEm);
         auto.setOnClickListener(onclick);
         cargoEmp.setOnClickListener(onclick);
     }
@@ -27,10 +27,10 @@ public class MenuPrincipal extends AppCompatActivity {
                         Intent intent = new Intent(MenuPrincipal.this,Auto.class);
                         MenuPrincipal.this.startActivity(intent);
                         break;
-                    case R.id.btnCargoEm:
+                  /*  case R.id.btnCargoEm:
                         Intent intent1 = new Intent(MenuPrincipal.this,CargoEmpleado.class);
                         MenuPrincipal.this.startActivity(intent1);
-                        break;/*
+                        break;
                     case R.id.btnCategoriaF:
                         intent = new Intent(MenuPrincipal.this,CategoriaFalla.class);
                         break;

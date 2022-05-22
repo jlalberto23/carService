@@ -7,40 +7,7 @@
     tools:context=".MenuPrincipal">
 
 
-    <Button
-        android:id="@+id/btnCliente"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/menu_cliente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toEndOf="@+id/btnUsuario"
-        app:layout_constraintTop_toBottomOf="@+id/btnCategoriaF" />
-
-    <Button
-        android:id="@+id/btnUsuario"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/menu_usuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCargoEm" />
-
-    <Button
-        android:id="@+id/btnMantenimiento"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/menu_mantenimiento"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUsuario" />
-
-    <Button
+    <!-- <Button
         android:id="@+id/btnMarcaA"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
@@ -50,9 +17,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toEndOf="@+id/btnTipoA"
-        app:layout_constraintTop_toBottomOf="@+id/btnEmpleado" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEmpleado" />-->
 
-    <Button
+   <!-- <Button
         android:id="@+id/btnTipoMto"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
@@ -60,9 +27,9 @@
         android:layout_marginTop="28dp"
         android:text="@string/menu_tipo_mto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTipoA" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTipoA" />-->
 
-    <Button
+   <!-- <Button
         android:id="@+id/btnCargoEm"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
@@ -71,32 +38,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/btnCliente"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/menu_diagnostico_falla"
+        android:layout_marginEnd="16dp"
+        android:text="@string/menu_cliente"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
-        app:layout_constraintStart_toEndOf="@+id/btnTipoMto"
-        app:layout_constraintTop_toBottomOf="@+id/btnMarcaA" />
+        tools:layout_editor_absoluteY="172dp" />
 
     <Button
-        android:id="@+id/btnEmpleado"
+        android:id="@+id/btnUsuario"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/menu_empleado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toEndOf="@+id/btnSucursal"
-        app:layout_constraintTop_toBottomOf="@+id/btnModeloAuto" />
+        android:layout_marginStart="28dp"
+        android:text="@string/menu_usuario"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="172dp" />
 
-    <Button
+    <!--  <Button
+          android:id="@+id/btnEmpleado"
+          android:layout_width="165dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="28dp"
+          android:text="@string/menu_empleado"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.068"
+          app:layout_constraintStart_toEndOf="@+id/btnSucursal"
+          app:layout_constraintTop_toBottomOf="@+id/btnModeloAuto" />-->
+
+   <!-- <Button
         android:id="@+id/btnTipoA"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
@@ -104,9 +79,9 @@
         android:layout_marginTop="28dp"
         android:text="@string/menu_tipo_auto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSucursal" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSucursal" />-->
 
-    <Button
+    <!--<Button
         android:id="@+id/btnCategoriaF"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
@@ -115,20 +90,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
-        android:id="@+id/btnModeloAuto"
+        android:id="@+id/btnAuto"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/menu_modelo_auto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toEndOf="@+id/btnMantenimiento"
-        app:layout_constraintTop_toBottomOf="@+id/btnCliente" />
+        android:layout_marginStart="28dp"
+        android:text="@string/menu_auto"
+        app:layout_constraintBottom_toTopOf="@+id/btnMantenimiento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.749" />
 
     <Button
+        android:id="@+id/btnFalla"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_falla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.698"
+        app:layout_constraintStart_toEndOf="@+id/btnAuto"
+        tools:layout_editor_absoluteY="302dp" />
+
+    <!--   <Button
+        android:id="@+id/button14"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/menu_diagnostico_falla"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="160dp" />-->
+
+    <!-- <Button
         android:id="@+id/btnSucursal"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
@@ -136,11 +130,33 @@
         android:layout_marginTop="28dp"
         android:text="@string/menu_sucursal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMantenimiento" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMantenimiento" />-->
+
+<!--    <Button
+        android:id="@+id/btnModeloAuto"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="220dp"
+        android:text="@string/menu_modelo_auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.737"
+        app:layout_constraintStart_toEndOf="@+id/btnMantenimiento" />-->
+
+    <Button
+        android:id="@+id/btnMantenimiento"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_mantenimiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="451dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/lblTitulo"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="@string/menu_principal"
@@ -150,34 +166,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnAuto"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/menu_auto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTipoMto" />
-
-    <Button
-        android:id="@+id/btnFalla"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/menu_falla"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toEndOf="@+id/btnAuto"
-        app:layout_constraintTop_toBottomOf="@+id/button14" />
-
-    <Button
         android:id="@+id/btnFacturacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="232dp"
         android:text="@string/menu_factura"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
