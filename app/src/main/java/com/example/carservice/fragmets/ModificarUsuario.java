@@ -40,12 +40,12 @@ public class ModificarUsuario extends Fragment {
             switch (v.getId())
             {
                 case R.id.btnModificar:
-                    String resp;
+                    String resp = null;
                     mtoUsuario usuario = new mtoUsuario();
                     usuario.setUsuario(user.getText().toString());
                     usuario.setContra(pwd.getText().toString());
                     cn.abrir();
-                    resp=cn.actualizar(usuario);
+                    //resp=cn.actualizar(usuario);
                     cn.cerrar();
                     Toast.makeText(v.getContext(), resp, Toast.LENGTH_SHORT).show();
                     break;

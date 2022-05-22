@@ -167,6 +167,21 @@ public class Conexion {
         return resp;
     }
 
+    public String actualizar(mtoUsuario usuario){
+        String resp = null;
+        try {
+            String[] id = {usuario.getUsuario()};
+            ContentValues cv = new ContentValues();
+            cv.put("contra",usuario.getContra());
+            db.update("usuario", cv, "usuario = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public String insertar(mtoEmpleado empleado){
         String resp = "ERROR!";
         long contador=0;
@@ -182,6 +197,24 @@ public class Conexion {
             else resp = "¡Datos guardados con éxito!";
         }catch (Exception ex){
             ex.printStackTrace();
+        }
+        return resp;
+    }
+
+    public String actualizar(mtoEmpleado empleado){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(empleado.getId_empleado())};
+            ContentValues cv = new ContentValues();
+            cv.put("nombre",empleado.getNombre());
+            cv.put("apellidos",empleado.getApellidos());
+            cv.put("id_cargo",empleado.getId_cargo());
+            cv.put("usuario",empleado.getUsuario());
+            db.update("empleado", cv, "id_empleado = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
         }
         return resp;
     }
@@ -208,6 +241,27 @@ public class Conexion {
         return resp;
     }
 
+    public String actualizar(mtoCliente cliente){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(cliente.getId_cliente())};
+            ContentValues cv = new ContentValues();
+            cv.put("nombre",cliente.getNombre());
+            cv.put("apellidos",cliente.getApellidos());
+            cv.put("direccion",cliente.getDireccion());
+            cv.put("telefono",cliente.getTelefono());
+            cv.put("dui",cliente.getDui());
+            cv.put("fecha_ingreso",cliente.getFecha_registro());
+            cv.put("usuario",cliente.getUsuario());
+            db.update("cliente", cv, "id_cliente = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public String insertar(mtoTipoAuto tipoAuto){
         String resp = "ERROR!";
         long contador=0;
@@ -220,6 +274,21 @@ public class Conexion {
             else resp = "¡Datos guardados con éxito!";
         }catch (Exception ex){
             ex.printStackTrace();
+        }
+        return resp;
+    }
+
+    public String actualizar(mtoTipoAuto tipoAuto){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(tipoAuto.getId_tipo_auto())};
+            ContentValues cv = new ContentValues();
+            cv.put("nombre_tipo_auto",tipoAuto.getTipo_auto());
+            db.update("tipoAuto", cv, "id_tipo_auto = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
         }
         return resp;
     }
@@ -241,6 +310,22 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String actualizar(mtoSucursal sucursal){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(sucursal.getId_sucursal())};
+            ContentValues cv = new ContentValues();
+            cv.put("nombre_sucursal",sucursal.getNombre_sucursal());
+            cv.put("direccion_sucursal",sucursal.getDireccion());
+            db.update("sucursal", cv, "id_sucursal = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public String insertar(mtoAuto auto){
         String regInsertados="";
         long contador=0;
@@ -260,6 +345,24 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String actualizar(mtoAuto auto){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(auto.getId_auto())};
+            ContentValues cv = new ContentValues();
+            cv.put("anio",auto.getAño());
+            cv.put("placa",auto.getPlaca());
+            cv.put("id_marca",auto.getId_marca());
+            cv.put("id_tipo_auto",auto.getId_tipo_auto());
+            db.update("auto", cv, "id_auto = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public String insertar(mtoCategoriaFalla catFall){
         String regInsertados="";
         long contador=0;
@@ -275,6 +378,22 @@ public class Conexion {
             ex.printStackTrace();
         }
         return regInsertados;
+    }
+
+    public String actualizar(mtoCategoriaFalla catFall){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(catFall.getId_categoria_falla())};
+            ContentValues cv = new ContentValues();
+            cv.put("nombre_categoria_falla",catFall.getNombre_categoria_falla());
+            cv.put("descripcion",catFall.getDescripcion());
+            db.update("categoriaFalla", cv, "id_categoria_falla = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
     }
 
     public String insertar(mtoDetalleMto detalleMto){
@@ -293,6 +412,21 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String actualizar(mtoDetalleMto detalleMto){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(detalleMto.getId_mto())};
+            ContentValues cv = new ContentValues();
+            cv.put("id_falla",detalleMto.getId_falla());
+            db.update("detalle_mto", cv, "id_mto = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public String insertar(mtoDiagnosticoFalla diagFall){
         String regInsertados="";
         long contador=0;
@@ -309,6 +443,21 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String actualizar(mtoDiagnosticoFalla diagFall){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(diagFall.getId_diagnostico())};
+            ContentValues cv = new ContentValues();
+            cv.put("id_falla",diagFall.getId_falla());
+            db.update("diagnostico_falla", cv, "id_diagnostico = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public String insertar(mtoDiagnosticoMto diagMto){
         String regInsertados="";
         long contador=0;
@@ -323,6 +472,21 @@ public class Conexion {
             ex.printStackTrace();
         }
         return regInsertados;
+    }
+
+    public String actualizar(mtoDiagnosticoMto diagMto){
+        String resp = null;
+        try {
+            String[] id = {String.valueOf(diagMto.getId_diagnostico_mto())};
+            ContentValues cv = new ContentValues();
+            cv.put("descripcion",diagMto.getDescripcion());
+            db.update("diagnostico_mto", cv, "id_diagnostico = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
     }
 
     public String insertar(mtoFacturacion factura){
