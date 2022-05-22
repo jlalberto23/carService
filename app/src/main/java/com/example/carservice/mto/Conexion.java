@@ -360,7 +360,7 @@ public class Conexion {
             dato.put("id_tipo_mto",mto.getId_tipo_mto());
             dato.put("id_sucursal",mto.getId_sucursal());
             dato.put("id_empleado",mto.getId_empleado());
-            contador=db.insert("falla",null,dato);
+            contador=db.insert("mantenimiento",null,dato);
             if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
             else regInsertados = "¡Datos guardados con éxito!";
         }catch (Exception ex){
