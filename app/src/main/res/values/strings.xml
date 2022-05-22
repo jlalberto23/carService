@@ -81,6 +81,7 @@
     <string name="consultarU">USUARIOS REGISTRADOS</string>
     <string name="guardarCE">GUARDAR CARGO EMPLEADO</string>
     <string name="guardarCL">GUARDAR CLIENTE</string>
+    <string name="guardarMTTO">GUARDAR MANTENIMIENTO</string>
     <string name="guardarAU">GUARDAR AUTO</string>
     <string name="guardarfalla">GUARDAR FALLA</string>
     <string name="modificarCE">MODIFICAR CARGO EMPLEADO</string>
@@ -90,6 +91,7 @@
     <string name="modificarCL">MODIFICAR CLIENTE</string>
     <string name="modificarAU">MODIFICAR AUTO</string>
     <string name="modificarfalla">MODIFICAR FALLA</string>
+    <string name="modificarMTO">MODIFICAR MANTENIMIENTO</string>
     <string name="consultarS">SUCURSALES REGISTRADOS</string>
     <string name="consultarA">CONSULTAR AUTO</string>
     <string name="consultarCl">CONSULTAR CLIENTE</string>

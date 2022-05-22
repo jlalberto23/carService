@@ -158,7 +158,107 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="35dp"
-        android:text="TextView" />
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="303dp"
+        android:text="ID Empleado" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView30"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="38dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView31"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="237dp"
+        android:text="Fecha del Mantto" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView32"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="27dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView33"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="248dp"
+        android:text="Proximo Mantto" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView34"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="24dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView35"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="243dp"
+        android:text="Estado del Mantto" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView36"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="21dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="126dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/textView37"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="245dp"
+        android:text="Descripcion del Mantto" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="173dp"
+        android:layout_height="41dp"
+        android:layout_below="@+id/textView38"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="19dp"
+        android:text="" />
 
 
 </RelativeLayout>
