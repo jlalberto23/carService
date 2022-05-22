@@ -96,7 +96,8 @@ public class Conexion {
                 //CREANDO TABLA FACTURA
                 db.execSQL("CREATE TABLE facturacion(id_factura INTEGER NOT NULL PRIMARY KEY,monto REAL NOT NULL,efectivo REAL NOT NULL,cambio REAL NOT NULL,fecha_factura VARHCAR(10) NOT NULL,id_mto INTEGER NOT NULL,FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento))");
             }catch(SQLException e){
-                e.printStackTrace();}
+                e.printStackTrace();
+            }
         }
 
         @Override
@@ -775,7 +776,7 @@ public class Conexion {
                 usuario.setUsuario(user[i]);
                 usuario.setContra(pwd[i]);
                 insertar(usuario);
-            }
+            }/*
             for (int i=0;i<3;i++){
                 cargo.setId_cargo(Codcargo[i]);
                 cargo.setNombre_cargo(Nomcargo[i]);
@@ -827,7 +828,7 @@ public class Conexion {
                 tipoMto.setId_tipo_mto(id_tipo[i]);
                 tipoMto.setNombre_tipo_mto(nombre_mto[i]);
                 insertar(tipoMto);
-            }
+            }*/
             cerrar();
         }catch (SQLException ex){
             ex.printStackTrace();

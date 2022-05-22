@@ -26,7 +26,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="87dp"
         android:layout_marginEnd="62dp"
         android:layout_toEndOf="@+id/lblCodigo"
         android:layout_toRightOf="@+id/lblCodigo"
@@ -65,46 +65,9 @@
         android:layout_marginRight="20sp"
         android:layout_marginBottom="80dp"
         android:text="@string/title_usuario"
-        app:layout_constraintBottom_toTopOf="@+id/txtContra"
-        app:layout_constraintEnd_toStartOf="@+id/txtUsuario"
         app:layout_constraintHorizontal_bias="0.342"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/txtUsuario"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lblTitulo"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginLeft="54dp"
-        android:layout_marginTop="302dp"
-        android:layout_marginEnd="76dp"
-        android:layout_toEndOf="@+id/lblCodigo"
-        android:layout_toRightOf="@+id/lblCodigo"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteY="278dp" />
-
-    <EditText
-        android:id="@+id/txtUsuario"
-        android:layout_width="207dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lblTitulo"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="369dp"
-        android:layout_marginEnd="70dp"
-        android:layout_toEndOf="@+id/lblapellido"
-        android:layout_toRightOf="@+id/lblCodigo"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteY="278dp" />
 
     <TextView
         android:id="@+id/lblNombre"
@@ -150,32 +113,6 @@
         android:text="@string/boton_cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/lblNombreCE"
-        android:layout_width="81dp"
-        android:layout_height="29dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="471dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="231dp"
-        android:text="@string/nombre" />
-
-    <TextView
-        android:id="@+id/lblapellido"
-        android:layout_width="81dp"
-        android:layout_height="29dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="541dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="160dp"
-        android:text="@string/apellidos" />
 
 
 </RelativeLayout>
