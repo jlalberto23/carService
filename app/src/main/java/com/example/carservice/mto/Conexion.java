@@ -369,6 +369,23 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String insertar(mtoMarcaAuto marca){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_marca_auto",marca.getId_marca());
+            dato.put("nombre_marca",marca.getNombre_marca());
+            dato.put("id_modelo_auto",marca.getId_modelo());
+            contador=db.insert("marcaAuto",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
     public void llenarBDCarnet(){
         try {
 
