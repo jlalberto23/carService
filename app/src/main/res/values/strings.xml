@@ -78,12 +78,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="guardarU">GUARDAR USUARIO</string>
     <string name="modificarU">MODIFICAR USUARIO</string>
+    <string name="modificarFAC">MODIFICAR FACTURACION</string>
     <string name="consultarU">USUARIOS REGISTRADOS</string>
     <string name="guardarCE">GUARDAR CARGO EMPLEADO</string>
     <string name="guardarCL">GUARDAR CLIENTE</string>
     <string name="guardarMTTO">GUARDAR MANTENIMIENTO</string>
     <string name="guardarAU">GUARDAR AUTO</string>
     <string name="guardarfalla">GUARDAR FALLA</string>
+    <string name="guardarFAC">GUARDAR FACTURACION</string>
     <string name="modificarCE">MODIFICAR CARGO EMPLEADO</string>
     <string name="consultarCE">CARGOS DE EMPLEADO REGISTRADOS</string>
     <string name="guardarS">GUARDAR SUCURSAL</string>
@@ -98,6 +100,7 @@
     <string name="consultarUS">CONSULTAR USUARIO</string>
     <string name="consultarFalla">CONSULTAR FALLA</string>
     <string name="consultarMTO">CONSULTAR MANTENIMIENTO</string>
+    <string name="consultarFAC">CONSULTAR FACTURACION</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
