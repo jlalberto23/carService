@@ -23,10 +23,10 @@ public class GuardarUsuario extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_guardar_usuario, container, false);
-        guardar = (Button)v.findViewById(R.id.btnGuardar);
-        cancelar = (Button)v.findViewById(R.id.btnCancelar);
-        user = (EditText)v.findViewById(R.id.txtUsuario);
-        pwd = (EditText)v.findViewById(R.id.txtContra);
+        guardar = (Button)v.findViewById(R.id.btnGuardarU);
+        cancelar = (Button)v.findViewById(R.id.btnCancelarU);
+        user = (EditText)v.findViewById(R.id.txtUsuario2);
+        pwd = (EditText)v.findViewById(R.id.txtContra2);
         guardar.setOnClickListener(onclick);
         cancelar.setOnClickListener(onclick);
         thiscontext = this.getActivity();
