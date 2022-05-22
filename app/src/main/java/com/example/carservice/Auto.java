@@ -16,8 +16,8 @@ public class Auto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto);
-        tabLayout =findViewById(R.id.tab_layout);
-        viewPager2 = findViewById(R.id.view_pager);
+        tabLayout =findViewById(R.id.tab_layout_au);
+        viewPager2 = findViewById(R.id.view_pager_au);
         myViewPagetAdapter = new MyViewPagetAdapter(this,"auto");
         viewPager2.setAdapter(myViewPagetAdapter);
 
