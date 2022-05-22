@@ -13,6 +13,7 @@
     <string name="menu_home">Principal</string>
     <string name="menu_auto">Auto</string>
     <string name="menu_cliente">Cliente</string>
+    <string name="ID_cliente">ID Cliente</string>
     <string name="menu_diagnostico_falla">Diagnostico Falla</string>
     <string name="menu_mantenimiento">Mantenimiento</string>
     <string name="menu_factura">Facturacion</string>
