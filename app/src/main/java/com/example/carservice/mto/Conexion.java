@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 public class Conexion {
     private static final String[] cargoEmpleado = new String[]{"id_cargo","nombre_cargo"};
@@ -750,16 +751,16 @@ public class Conexion {
 
             abrir();
 
-            db.execSQL("DELETE FROM cargoEmpleado");
-            db.execSQL("DELETE FROM usuario");
             db.execSQL("DELETE FROM empleado");
             db.execSQL("DELETE FROM cliente");
+            db.execSQL("DELETE FROM cargoEmpleado");
+            db.execSQL("DELETE FROM usuario");
             db.execSQL("DELETE FROM tipoAuto");
-            db.execSQL("DELETE FROM sucursal");
             db.execSQL("DELETE FROM categoriaFalla");
-            db.execSQL("DELETE FROM marca");
-            db.execSQL("DELETE FROM modelo");
-            db.execSQL("DELETE FROM tipoMto");
+            db.execSQL("DELETE FROM modeloAuto");
+            db.execSQL("DELETE FROM marcaAuto");
+            db.execSQL("DELETE FROM tipoMantenimiento");
+            db.execSQL("DELETE FROM sucursal");
 
             mtoCargoEmpleado cargo = new mtoCargoEmpleado();
             mtoUsuario usuario = new mtoUsuario();
@@ -776,7 +777,7 @@ public class Conexion {
                 usuario.setUsuario(user[i]);
                 usuario.setContra(pwd[i]);
                 insertar(usuario);
-            }/*
+            }
             for (int i=0;i<3;i++){
                 cargo.setId_cargo(Codcargo[i]);
                 cargo.setNombre_cargo(Nomcargo[i]);
@@ -828,7 +829,7 @@ public class Conexion {
                 tipoMto.setId_tipo_mto(id_tipo[i]);
                 tipoMto.setNombre_tipo_mto(nombre_mto[i]);
                 insertar(tipoMto);
-            }*/
+            }
             cerrar();
         }catch (SQLException ex){
             ex.printStackTrace();
