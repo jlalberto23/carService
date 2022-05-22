@@ -86,6 +86,7 @@
     <string name="consultarS">SUCURSALES REGISTRADOS</string>
     <string name="consultarA">CONSULTAR AUTO</string>
     <string name="consultarCl">CONSULTAR CLIENTE</string>
+    <string name="consultarUS">CONSULTAR USUARIO</string>
     <string name="consultarFalla">CONSULTAR FALLA</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

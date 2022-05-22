@@ -38,14 +38,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/lblUsuario"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="80sp"
+        android:layout_marginTop="52dp"
         android:text="@string/title_pwd"
         app:layout_constraintEnd_toStartOf="@+id/txtContra"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/txtUsuario"
+        android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/lblTitulo"
@@ -60,11 +60,15 @@
 
     <EditText
         android:id="@+id/txtContra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="129dp"
+        android:layout_height="25dp"
         android:layout_below="@id/txtUsuario"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="53dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="113dp"
+        android:layout_toEndOf="@+id/lblapellido"
         android:layout_toRightOf="@id/lblContra"
         android:ems="10"
         android:inputType="numberPassword"
@@ -73,28 +77,14 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/btnModificar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtContra"
-        android:layout_marginLeft="65sp"
-        android:layout_marginTop="100sp"
-        android:backgroundTint="@color/rojo"
-        android:text="@string/boton_modificar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnCancelar"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/btnCancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtContra"
-        android:layout_toRightOf="@+id/btnModificar"
-        android:layout_marginTop="100sp"
-        android:layout_marginLeft="50sp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="69dp"
         android:layout_marginBottom="164dp"
+        android:layout_toRightOf="@+id/btnModificar"
         android:backgroundTint="@color/rojo"
         android:text="@string/boton_cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,33 +92,80 @@
         app:layout_constraintTop_toTopOf="@+id/btnModificar"
         app:layout_constraintVertical_bias="0.0" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="409dp"
+    <Button
+        android:id="@+id/btnModificar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="16dp">
+        android:layout_below="@id/txtContra"
+        android:layout_marginLeft="65sp"
+        android:layout_marginTop="71dp"
+        android:backgroundTint="@color/rojo"
+        android:text="@string/boton_modificar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelar"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Consultar" />
+    <TextView
+        android:id="@+id/lblNombreCE"
+        android:layout_width="81dp"
+        android:layout_height="29dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="427dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="274dp"
+        android:text="@string/nombre" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Guardar" />
+    <TextView
+        android:id="@+id/lblapellido"
+        android:layout_width="81dp"
+        android:layout_height="29dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="492dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="209dp"
+        android:text="@string/apellidos" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Modificar" />
-    </com.google.android.material.tabs.TabLayout>
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/view_pager"
-        android:layout_below="@id/tab_layout"/>
+    <EditText
+        android:id="@+id/txtUsuario"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblTitulo"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="75dp"
+
+
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblTitulo"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="109dp"
+        android:layout_toEndOf="@+id/lblapellido"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteY="278dp" />
+
 
 </RelativeLayout>

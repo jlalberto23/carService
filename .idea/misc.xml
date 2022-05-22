@@ -46,7 +46,7 @@
         <entry key="..\:/Users/Jose Alberto/AndroidStudioProjects/carService/app/src/main/res/layout/fragment_guardar_sucursal.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jose Alberto/AndroidStudioProjects/carService/app/src/main/res/layout/fragment_guardar_tipo_auto.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jose Alberto/AndroidStudioProjects/carService/app/src/main/res/layout/fragment_guardar_tipo_mto.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Jose Alberto/AndroidStudioProjects/carService/app/src/main/res/layout/fragment_guardar_usuario.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Jose Alberto/AndroidStudioProjects/carService/app/src/main/res/layout/fragment_guardar_usuario.xml" value="0.25" />
         <entry key="..\:/Users/Jose Alberto/AndroidStudioProjects/carService/app/src/main/res/layout/fragment_modificar_auto.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jose Alberto/AndroidStudioProjects/carService/app/src/main/res/layout/fragment_modificar_cargo_e.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jose Alberto/AndroidStudioProjects/carService/app/src/main/res/layout/fragment_modificar_cat_falla.xml" value="0.36666666666666664" />
@@ -85,6 +85,7 @@
         <entry key="..\:/Users/hsm2_/AndroidStudioProjects/CarService/app/src/main/res/layout/fragment_modificar_sucursal.xml" value="0.275" />
         <entry key="..\:/Users/hsm2_/AndroidStudioProjects/CarService/app/src/main/res/layout/fragment_modificar_usuario.xml" value="0.275" />
         <entry key="..\:/Users/hsm2_/AndroidStudioProjects/CarService/app/src/main/res/layout/fragment_usuario.xml" value="0.275" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/activity_auto.xml" value="0.25" />
         <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/activity_cliente.xml" value="0.25" />
         <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/activity_falla.xml" value="0.25" />
@@ -99,6 +100,8 @@
         <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/fragment_guardar_auto.xml" value="0.25" />
         <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/fragment_guardar_usuario.xml" value="0.25" />
         <entry key="..\:/Users/hsm2_/OneDrive/Escritorio/Nueva carpeta/carService/app/src/main/res/layout/fragment_modificar_auto.xml" value="0.25" />
+=======
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>

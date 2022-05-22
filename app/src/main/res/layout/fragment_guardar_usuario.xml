@@ -6,6 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".fragmets.GuardarUsuario">
 
+    <EditText
+        android:id="@+id/txtContra2"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblCodigo"
+        android:layout_marginLeft="27sp"
+        android:layout_marginRight="70sp"
+        android:layout_toRightOf="@+id/lblNombre"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/txtUsuario2"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblTitulo"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="62dp"
+        android:layout_toEndOf="@+id/lblCodigo"
+        android:layout_toRightOf="@+id/lblCodigo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteY="278dp" />
+
     <TextView
         android:id="@+id/lblTitulo"
         android:layout_width="wrap_content"
@@ -42,15 +72,33 @@
 
     <EditText
         android:id="@+id/txtUsuario"
-        android:layout_width="199dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lblTitulo"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="49dp"
-        android:layout_marginLeft="49dp"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="62dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="302dp"
+        android:layout_marginEnd="76dp"
         android:layout_toEndOf="@+id/lblCodigo"
+        android:layout_toRightOf="@+id/lblCodigo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <EditText
+        android:id="@+id/txtUsuario"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblTitulo"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="369dp"
+        android:layout_marginEnd="70dp"
+        android:layout_toEndOf="@+id/lblapellido"
         android:layout_toRightOf="@+id/lblCodigo"
         android:ems="10"
         android:inputType="textPersonName"
@@ -69,24 +117,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="20sp"
         android:text="@string/title_pwd"
-        app:layout_constraintEnd_toStartOf="@+id/txtContra"
         app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtContra" />
-
-    <Button
-        android:id="@+id/btnCancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lblNombre"
-        android:layout_marginTop="100sp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="176dp"
-        android:layout_toRightOf="@+id/btnGuardar"
-        android:backgroundTint="@color/rojo"
-        android:text="@string/boton_cancelar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+         />
 
     <Button
         android:id="@+id/btnGuardar"
@@ -94,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/lblNombre"
         android:layout_marginLeft="60sp"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="245dp"
         android:layout_marginRight="50sp"
         android:backgroundTint="@color/rojo"
         android:text="@string/boton_guardar"
@@ -103,16 +136,46 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="507dp" />
 
-    <EditText
-        android:id="@+id/txtContra"
-        android:layout_width="208dp"
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lblCodigo"
-        android:layout_marginLeft="27sp"
-        android:layout_marginRight="70sp"
-        android:layout_toRightOf="@+id/lblNombre"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        android:layout_below="@+id/lblNombre"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="245dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="176dp"
+        android:layout_toRightOf="@+id/btnGuardar"
+        android:backgroundTint="@color/rojo"
+        android:text="@string/boton_cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lblNombreCE"
+        android:layout_width="81dp"
+        android:layout_height="29dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="471dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="231dp"
+        android:text="@string/nombre" />
+
+    <TextView
+        android:id="@+id/lblapellido"
+        android:layout_width="81dp"
+        android:layout_height="29dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="541dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="160dp"
+        android:text="@string/apellidos" />
+
 
 </RelativeLayout>
