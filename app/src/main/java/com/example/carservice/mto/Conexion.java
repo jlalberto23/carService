@@ -127,6 +127,22 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String actualizar(mtoCargoEmpleado cargo){
+        String resp = null;
+        try {
+
+            String[] id = {String.valueOf(cargo.getId_cargo())};
+            ContentValues cv = new ContentValues();
+            cv.put("nombre_cargo", cargo.getNombre_cargo());
+            db.update("cargoEmpleado", cv, "id_cargo = ?", id);
+            resp = "Registro Actualizado Correctamente";
+        }catch (Exception ex){
+            ex.printStackTrace();
+            resp = "Error al modificar!";
+        }
+        return resp;
+    }
+
     public boolean login(String usuario, String contra){
         boolean resp = false;
         Cursor cursor = db.rawQuery("SELECT * FROM usuario WHERE usuario = '"+usuario+"' AND contra = '"+contra+"'",null);
@@ -369,6 +385,22 @@ public class Conexion {
         return regInsertados;
     }
 
+    public String insertar(mtoModeloAuto modelo){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_modelo_auto",modelo.getId_modelo());
+            dato.put("nombre_modelo",modelo.getNombre_modelo());
+            contador=db.insert("modeloAuto",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
     public String insertar(mtoMarcaAuto marca){
         String regInsertados="";
         long contador=0;
@@ -378,6 +410,22 @@ public class Conexion {
             dato.put("nombre_marca",marca.getNombre_marca());
             dato.put("id_modelo_auto",marca.getId_modelo());
             contador=db.insert("marcaAuto",null,dato);
+            if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
+            else regInsertados = "¡Datos guardados con éxito!";
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return regInsertados;
+    }
+
+    public String insertar(mtoTipoMto tipoMto){
+        String regInsertados="";
+        long contador=0;
+        try {
+            ContentValues dato = new ContentValues();
+            dato.put("id_tipo_mto",tipoMto.getId_tipo_mto());
+            dato.put("nombre_tipo_mto",tipoMto.getNombre_tipo_mto());
+            contador=db.insert("tipoMantenimiento",null,dato);
             if(contador==-1 || contador==0) regInsertados= "Error al guardar los datos";
             else regInsertados = "¡Datos guardados con éxito!";
         }catch (Exception ex){
@@ -412,9 +460,8 @@ public class Conexion {
             final String[] Nomtp = {"Sedán","Hatchback","SUV"};
             final int[] Codsuc = {1,2,3};
             final String[] Nomsuc = {"Casa Matriz","Centro","San Miguel"};
-            final String[] Dirsuc = {"San Salvador","Santa Ana","San Miguel"
-            };
-            //TABLA categoria_falla
+            final String[] Dirsuc = {"San Salvador","Santa Ana","San Miguel"};
+
             final int[] id_categoria_falla = {1,2,3,4,5};
             final String[] nombre_categoria_falla = {"Chasis/Dirección","Motor/sistemas anticontaminación","Carrocería/interior","Frenos","Sistema electrico" };
             final String[] descripcion ={"Se comprueba el estado de la suspensión, (amortiguadores, muelles, puntos de anclaje…) y de la dirección (rótulas, bomba de asistencia…)",
@@ -422,17 +469,12 @@ public class Conexion {
             "Se vigilar su deterioro (corrosión, faros)… así como el cinturón de seguridad y desjustes del salpicadero.",
             "Para comprobar su eficacia y posibles fallos en el sistema de frenado (pastillas, discos, servofreno, líquidos…)",
             "Se localizan posibles fallos eléctricos (luces en el cuadro de mandos, cierre, climatizador..)"};
-//TABLA MARCA
-            final int[] id_marca_auto = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
-            final String[] nombre_marca = {"Alfa Romeo","Aston Martin","Audi","Bentley","BMW","Cadillac","Chevrolet","Daewoo","Daihatsu","Ford","GMC","Honda","Hyundai","Isuzu","Jaguar","Jeep","Kia","Mazda","Mercedes-benz","Mini","Mitsubishi","Nissan","Suzuki","Toyota","Volkswagen"
-            };
-            final int[]  id_modelo_auto1 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51};
-            // TABLA modelo_auto
             final int[]  id_modelo_auto2 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51};
             final String[] nombre_modelo = {"500","Grande Punto","Punto Evo","500c","695","Punto","155","156","159","164","145","147","146","Gtv","Spider","166","Gt","Crosswagon","Brera","90","75","33","Giulietta","Sprint","Mito","Expander","10","24","Dacia","Rocsta","Db7","V8","Db9","Vanquish","V8 Vantage","Vantage","Dbs","Volante","Virage","Vantage V8","Vantage V12","Rapide","Cygnet","80","A4","A6","S6","Coupe","S2","Rs2"};
-
-            //TABLA tipo_auto
-            final int[] id_tipo_auto = {1,2,3,4,5,6,7,8,9,10,11,12,13,99};
+            final int[] id_marca_auto = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
+            final String[] nombre_marca = {"Alfa Romeo","Aston Martin","Audi","Bentley","BMW","Cadillac","Chevrolet","Daewoo","Daihatsu","Ford","GMC","Honda","Hyundai","Isuzu","Jaguar","Jeep","Kia","Mazda","Mercedes-benz","Mini","Mitsubishi","Nissan","Suzuki","Toyota","Volkswagen"};
+            final int[]  id_modelo_auto1 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51};
+            final int[] id_tipo_auto = {1,2,3,4,5,6,7,8,9,10,11,12,13,14};
             final String[] nombre_tipo_auto = {"Sedán","Hatchback","Coupé","SUV","Mini van","Crossover","Convertible","MPV","Pick Up","Microbus","Bus","Camion 2T","Camion +2T","Otro"};
             //TABLA tipo_mto
             final int[] id_tipo = {1,2,3};
@@ -440,13 +482,16 @@ public class Conexion {
 
             abrir();
 
-            db.execSQL("DELETE FROM empleado");
-            db.execSQL("DELETE FROM cliente");
             db.execSQL("DELETE FROM cargoEmpleado");
             db.execSQL("DELETE FROM usuario");
+            db.execSQL("DELETE FROM empleado");
+            db.execSQL("DELETE FROM cliente");
             db.execSQL("DELETE FROM tipoAuto");
             db.execSQL("DELETE FROM sucursal");
             db.execSQL("DELETE FROM categoriaFalla");
+            db.execSQL("DELETE FROM marca");
+            db.execSQL("DELETE FROM modelo");
+            db.execSQL("DELETE FROM tipoMto");
 
             mtoCargoEmpleado cargo = new mtoCargoEmpleado();
             mtoUsuario usuario = new mtoUsuario();
@@ -455,6 +500,9 @@ public class Conexion {
             mtoTipoAuto tipoA = new mtoTipoAuto();
             mtoSucursal sucursal = new mtoSucursal();
             mtoCategoriaFalla categoriaFalla = new mtoCategoriaFalla();
+            mtoMarcaAuto marca = new mtoMarcaAuto();
+            mtoModeloAuto modelo = new mtoModeloAuto();
+            mtoTipoMto tipoMto = new mtoTipoMto();
 
             for (int i=0;i<6;i++){
                 usuario.setUsuario(user[i]);
@@ -487,7 +535,31 @@ public class Conexion {
                 sucursal.setNombre_sucursal(Nomsuc[i]);
                 sucursal.setDireccion(Dirsuc[i]);
                 insertar(sucursal);
-
+            }
+            for (int i=0;i<5;i++){
+                categoriaFalla.setId_categoria_falla(id_categoria_falla[i]);
+                categoriaFalla.setNombre_categoria_falla(nombre_categoria_falla[i]);
+                categoriaFalla.setDescripcion(descripcion[i]);
+                insertar(categoriaFalla);
+            }
+            for (int i=0;i<25;i++){
+                modelo.setId_modelo(id_modelo_auto2[i]);
+                modelo.setNombre_modelo(nombre_modelo[i]);
+                insertar(modelo);
+                marca.setId_marca(id_marca_auto[i]);
+                marca.setNombre_marca(nombre_marca[i]);
+                marca.setId_modelo(id_modelo_auto1[i]);
+                insertar(marca);
+            }
+            for (int i=0;i<14;i++){
+                tipoA.setId_tipo_auto(id_tipo_auto[i]);
+                tipoA.setTipo_auto(nombre_tipo_auto[i]);
+                insertar(tipoA);
+            }
+            for (int i=0;i<3;i++){
+                tipoMto.setId_tipo_mto(id_tipo[i]);
+                tipoMto.setNombre_tipo_mto(nombre_mto[i]);
+                insertar(tipoMto);
             }
             cerrar();
         }catch (SQLException ex){
