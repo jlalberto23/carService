@@ -246,7 +246,7 @@ public class Conexion {
     public void llenarBDCarnet(){
         try {
 
-            /*POR AGREGAR: , MARCA, MODELO,TIPOAUTO,TIPOMTO*/
+            /*POR AGREGAR: categoria_falla, MARCA, MODELO,TIPOAUTO,TIPOMTO*/
             final int[] Codcargo = {1,2,3};
             final String[] Nomcargo = {"Administrador","Gerente","Mecanico"};
             final String[] user = {"admin","gerente1","mecanico1","cliente1","cliente2","cliente3"};
@@ -284,7 +284,16 @@ public class Conexion {
             final String[] nombre_marca = {"Alfa Romeo","Aston Martin","Audi","Bentley","BMW","Cadillac","Chevrolet","Daewoo","Daihatsu","Ford","GMC","Honda","Hyundai","Isuzu","Jaguar","Jeep","Kia","Mazda","Mercedes-benz","Mini","Mitsubishi","Nissan","Suzuki","Toyota","Volkswagen"
             };
             final int[]  id_modelo_auto = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51};
-            
+            // TABLA modelo_auto
+            final int[]  id_modelo_auto = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51};
+            final String[] nombre_modelo = {"500","Grande Punto","Punto Evo","500c","695","Punto","155","156","159","164","145","147","146","Gtv","Spider","166","Gt","Crosswagon","Brera","90","75","33","Giulietta","Sprint","Mito","Expander","10","24","Dacia","Rocsta","Db7","V8","Db9","Vanquish","V8 Vantage","Vantage","Dbs","Volante","Virage","Vantage V8","Vantage V12","Rapide","Cygnet","80","A4","A6","S6","Coupe","S2","Rs2"};
+
+            //TABLA tipo_auto
+            final int[] id_tipo_auto = {1,2,3,4,5,6,7,8,9,10,11,12,13,99};
+            final String[] nombre_tipo_auto = {"Sedán","Hatchback","Coupé","SUV","Mini van","Crossover","Convertible","MPV","Pick Up","Microbus","Bus","Camion 2T","Camion +2T","Otro"};
+            //TABLA tipo_mto
+            final int[] id_tipo = {1,2,3};
+            final String[] nombre_mto = {"Mantenimiento correctivo","Mantenimiento preventivo","Mantenimiento predictivo"};
 
             abrir();
 
