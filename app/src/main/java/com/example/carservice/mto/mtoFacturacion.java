@@ -5,12 +5,12 @@ import java.util.Date;
 public class mtoFacturacion {
     private int id_facturacion,id_mto;
     private double monto,efectivo,cambio;
-    private Date fecha_factura;
+    private String fecha_factura;
 
     public mtoFacturacion() {
     }
 
-    public mtoFacturacion(int id_facturacion, int id_mto, double monto, double efectivo, double cambio, Date fecha_factura) {
+    public mtoFacturacion(int id_facturacion, int id_mto, double monto, double efectivo, double cambio, String fecha_factura) {
         this.id_facturacion = id_facturacion;
         this.id_mto = id_mto;
         this.monto = monto;
@@ -59,11 +59,11 @@ public class mtoFacturacion {
         this.cambio = cambio;
     }
 
-    public Date getFecha_factura() {
+    public String getFecha_factura() {
         return fecha_factura;
     }
 
-    public void setFecha_factura(Date fecha_factura) {
+    public void setFecha_factura(String fecha_factura) {
         this.fecha_factura = fecha_factura;
     }
 }

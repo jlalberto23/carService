@@ -4,13 +4,12 @@ import java.util.Date;
 
 public class mtoMantenimiento {
     private int id_mto,id_diagnostico,id_tipo_mto,id_sucursal,id_empleado;
-    private String estado_mto,descripcion;
-    private Date fecha_mto, proximo_mto;
+    private String estado_mto,descripcion,fecha_mto, proximo_mto;
 
     public mtoMantenimiento() {
     }
 
-    public mtoMantenimiento(int id_mto, int id_diagnostico, int id_tipo_mto, int id_sucursal, int id_empleado, String estado_mto, String descripcion, Date fecha_mto, Date proximo_mto) {
+    public mtoMantenimiento(int id_mto, int id_diagnostico, int id_tipo_mto, int id_sucursal, int id_empleado, String estado_mto, String descripcion, String fecha_mto, String proximo_mto) {
         this.id_mto = id_mto;
         this.id_diagnostico = id_diagnostico;
         this.id_tipo_mto = id_tipo_mto;
@@ -78,19 +77,19 @@ public class mtoMantenimiento {
         this.descripcion = descripcion;
     }
 
-    public Date getFecha_mto() {
+    public String getFecha_mto() {
         return fecha_mto;
     }
 
-    public void setFecha_mto(Date fecha_mto) {
+    public void setFecha_mto(String fecha_mto) {
         this.fecha_mto = fecha_mto;
     }
 
-    public Date getProximo_mto() {
+    public String getProximo_mto() {
         return proximo_mto;
     }
 
-    public void setProximo_mto(Date proximo_mto) {
+    public void setProximo_mto(String proximo_mto) {
         this.proximo_mto = proximo_mto;
     }
 }
