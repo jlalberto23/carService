@@ -95,6 +95,7 @@
     <string name="consultarCl">CONSULTAR CLIENTE</string>
     <string name="consultarUS">CONSULTAR USUARIO</string>
     <string name="consultarFalla">CONSULTAR FALLA</string>
+    <string name="consultarMTO">CONSULTAR MANTENIMIENTO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
