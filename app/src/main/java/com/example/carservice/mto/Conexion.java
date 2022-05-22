@@ -67,91 +67,39 @@ public class Conexion {
 
                 //CREATE TABLA SUCURSAL
                 db.execSQL("CREATE TABLE sucursal(id_sucursal INTEGER NOT NULL PRIMARY KEY,nombre_sucursal VARCHAR(50) NOT NULL UNIQUE,direccion_sucursal VARCHAR(150))");
-                /*
+
                 //CREANDO TABLA CATEGORIA FALLA
-                db.execSQL("CREATE TABLE categoriaFalla(" +
-                        "id_categoria_falla INT NOT NULL PRIMARY KEY," +
-                        "nombre_categoria_falla VARCHAR(50) NOT NULL UNIQUE," +
-                        "descripcion VARCHAR(150))");
+                db.execSQL("CREATE TABLE categoriaFalla(id_categoria_falla INTEGER NOT NULL PRIMARY KEY,nombre_categoria_falla VARCHAR(50) NOT NULL UNIQUE,descripcion VARCHAR(150))");
 
                 //CREANDO TABLA TIPO MANTENIMIENTO
-                db.execSQL("CREATE TABLE tipoMantenimiento(" +
-                        "id_tipo_mto INT NOT NULL PRIMARY KEY," +
-                        "nombre_tipo_mto VARCHAR(50) NOT NULL UNIQUE)");
+                db.execSQL("CREATE TABLE tipoMantenimiento(id_tipo_mto INTEGER NOT NULL PRIMARY KEY,nombre_tipo_mto VARCHAR(50) NOT NULL UNIQUE)");
 
                 //CREANDO TABLA MODELO AUTO
-                db.execSQL("CREATE TABLE modeloAuto(" +
-                        "id_modelo_auto INT NOT NULL PRIMARY KEY," +
-                        "nombre_modelo VARCHAR(50) NOT NULL UNIQUE)");
+                db.execSQL("CREATE TABLE modeloAuto(id_modelo_auto INTEGER NOT NULL PRIMARY KEY, nombre_modelo VARCHAR(50) NOT NULL UNIQUE)");
 
                 //CREANDO TABLA MARCA AUTO
-                db.execSQL("CREATE TABLE marcaAuto(" +
-                        "id_marca_auto INT NOT NULL PRIMARY KEY," +
-                        "nombre_marca VARCHAR(50) NOT NULL UNIQUE," +
-                        "id_modelo_auto INT NOT NULL," +
-                        "FOREIGN KEY(id_modelo_auto) REFERENCES modeloAuto(id_modelo_auto))");
+                db.execSQL("CREATE TABLE marcaAuto(id_marca_auto INTEGER NOT NULL PRIMARY KEY,nombre_marca VARCHAR(50) NOT NULL UNIQUE,id_modelo_auto INTEGER NOT NULL,FOREIGN KEY(id_modelo_auto) REFERENCES modeloAuto(id_modelo_auto))");
 
                 //CREANDO TABLA AUTO
-                db.execSQL("CREATE TABLE auto(" +
-                        "id_auto INT NOT NULL PRIMARY KEY," +
-                        "anio INT NOT NULL," +
-                        "placa CHAR(8) NOT NULL UNIQUE," +
-                        "id_marca INT NOT NULL," +
-                        "id_tipo_auto INT NOT NULL," +
-                        "FOREIGN KEY(id_marca) REFERENCES marcaAuto(id_marca)," +
-                        "FOREIGN KEY(id_tipo_auto) REFERENCES tipoAuto(id_tipo_auto))");
+                db.execSQL("CREATE TABLE auto(id_auto INTEGER NOT NULL PRIMARY KEY,anio INTEGER NOT NULL, placa VARCHAR(8) NOT NULL UNIQUE, id_marca INTEGER NOT NULL, id_tipo_auto INTEGER NOT NULL, FOREIGN KEY(id_marca) REFERENCES marcaAuto(id_marca), FOREIGN KEY(id_tipo_auto) REFERENCES tipoAuto(id_tipo_auto))");
 
                 //CREANDO TABLA FALLA
-                db.execSQL("CREATE TABLE falla(" +
-                        "id_falla INT NOT NULL PRIMARY KEY," +
-                        "descripcion_falla VARCHAR(150) NOT NULL," +
-                        "id_categoria_falla INT NOT NULL," +
-                        "FOREIGN KEY(id_categoria_falla) REFERENCES categoriaFalla(id_categoria_falla))");
+                db.execSQL("CREATE TABLE falla(id_falla INTEGER NOT NULL PRIMARY KEY, descripcion_falla VARCHAR(150) NOT NULL, id_categoria_falla INTEGER NOT NULL, FOREIGN KEY(id_categoria_falla) REFERENCES categoriaFalla(id_categoria_falla))");
 
                 //CREANDO TABLA DIAGNOSTICO MANTENIMIENTO
-                db.execSQL("CREATE TABLE diagnostico_mto(" +
-                        "id_diagnostico INT NOT NULL PRIMARY KEY," +
-                        "descripcion VARHCAR(150) NOT NULL)");
+                db.execSQL("CREATE TABLE diagnostico_mto(id_diagnostico INTEGER NOT NULL PRIMARY KEY,descripcion VARHCAR(150) NOT NULL)");
 
                 //CREANDO TABLA DIAGNOSTICO-FALLA
-                db.execSQL("CREATE TABLE diagnostico_falla(" +
-                        "id_diagnostico INT NOT NULL," +
-                        "id_falla INT NOT NULL," +
-                        "FOREIGN KEY(id_diagnostico) REFERENCES diagnostico_mto(id_diagnostico)," +
-                        "FOREIGN KEY(id_falla) REFERENCES falla(id_falla))");
+                db.execSQL("CREATE TABLE diagnostico_falla(id_diagnostico INTEGER NOT NULL,id_falla INTEGER NOT NULL,FOREIGN KEY(id_diagnostico) REFERENCES diagnostico_mto(id_diagnostico),FOREIGN KEY(id_falla) REFERENCES falla(id_falla))");
 
                 //CREANDO TABLA MANTENIMIENTO
-                db.execSQL("CREATE TABLE mantenimiento(" +
-                        "id_mantenimiento INT NOT NULL PRIMARY KEY," +
-                        "descripcion_mto VARCHAR(200) NOT NULL," +
-                        "fecha_mto DATETIME NOT NULL," +
-                        "proximo_mto DATETIME," +
-                        "estado_mto CHAR(1) NOT NULL," +
-                        "id_diagnostico INT NOT NULL," +
-                        "id_tipo_mto INT NOT NULL," +
-                        "id_sucursal INT NOT NULL," +
-                        "id_empleado INT NOT NULL," +
-                        "FOREIGN KEY(id_diagnostico) REFERENCES diagnostico(id_diagnostico)," +
-                        "FOREIGN KEY(id_tipo_mto) REFERENCES tipoMantenimiento(id_tipo_mto)," +
-                        "FOREIGN KEY(id_sucursal) REFERENCES sucursal(id_sucursal)," +
-                        "FOREIGN KEY(id_empleado) REFERENCES empleado(id_empleado))");
+                db.execSQL("CREATE TABLE mantenimiento(id_mantenimiento INTEGER NOT NULL PRIMARY KEY,descripcion_mto VARCHAR(200) NOT NULL,fecha_mto VARHCAR(10) NOT NULL,proximo_mto VARHCAR(10),estado_mto VARHCAR(1) NOT NULL,id_diagnostico INTEGER NOT NULL,id_tipo_mto INTEGER NOT NULL,id_sucursal INTEGER NOT NULL,id_empleado INTEGER NOT NULL,FOREIGN KEY(id_diagnostico) REFERENCES diagnostico(id_diagnostico),FOREIGN KEY(id_tipo_mto) REFERENCES tipoMantenimiento(id_tipo_mto),FOREIGN KEY(id_sucursal) REFERENCES sucursal(id_sucursal),FOREIGN KEY(id_empleado) REFERENCES empleado(id_empleado))");
 
                 //CREANDO TABLA DETALLE MANTENIMIENTO
-                db.execSQL("CREATE TABLE detalle_mto(" +
-                        "id_mto INT NOT NULL," +
-                        "id_falla INT NOT NULL," +
-                        "FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento)," +
-                        "FOREIGN KEY(id_falla) REFERENCES falla(id_falla))");
+                db.execSQL("CREATE TABLE detalle_mto(id_mto INTEGER NOT NULL,id_falla INTEGER NOT NULL,FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento),FOREIGN KEY(id_falla) REFERENCES falla(id_falla))");
 
                 //CREANDO TABLA FACTURA
-                db.execSQL("CREATE TABLE facturacion(" +
-                        "id_factura INT NOT NULL PRIMARY KEY," +
-                        "monto REAL NOT NULL," +
-                        "efectivo REAL NOT NULL," +
-                        "cambio REAL NOT NULL," +
-                        "fecha_factura DATETIME NOT NULL," +
-                        "id_mto INT NOT NULL," +
-                        "FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento))");*/
+                db.execSQL("CREATE TABLE facturacion(id_factura INTEGER NOT NULL PRIMARY KEY,monto REAL NOT NULL,efectivo REAL NOT NULL,cambio REAL NOT NULL,fecha_factura DATETIME NOT NULL,id_mto INTEGER NOT NULL,FOREIGN KEY(id_mto) REFERENCES mantenimiento(id_mantenimiento))");*/
             }catch(SQLException e){
                 e.printStackTrace();}
         }
@@ -297,6 +245,8 @@ public class Conexion {
 
     public void llenarBDCarnet(){
         try {
+
+            /*POR AGREGAR: CATEGORIA_FALLA, MARCA, MODELO,TIPOAUTO,TIPOMTO*/
             final int[] Codcargo = {1,2,3};
             final String[] Nomcargo = {"Administrador","Gerente","Mecanico"};
             final String[] user = {"admin","gerente1","mecanico1","cliente1","cliente2","cliente3"};
