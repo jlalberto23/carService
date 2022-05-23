@@ -20,7 +20,7 @@ import java.util.Date;
 public class GuardarCliente extends Fragment {
     Conexion cn;
     Button guardar,cancelar;
-    EditText codigo,usuario,nombre,apellido,telefono,direccion;
+    EditText codigo,usuario,nombre,apellido,telefono,direccion,dui;
     TextView fecha_ingreso;
     Context thiscontext = null;
     long ahora = System.currentTimeMillis();
@@ -32,14 +32,16 @@ public class GuardarCliente extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_guardar_cliente, container, false);
-        guardar = (Button)v.findViewById(R.id.btnGuardarEmp);
-        cancelar = (Button)v.findViewById(R.id.btnCancelarEmp);
-        codigo = (EditText)v.findViewById(R.id.txtCodigoEmpG);
-        usuario = (EditText)v.findViewById(R.id.editTextTextPersonName16);
-        nombre = (EditText)v.findViewById(R.id.txtNOmbreEmpG);
-        apellido = (EditText)v.findViewById(R.id.txtApellidosEmpG);
-        telefono = (EditText)v.findViewById(R.id.txtTelefonoEmpG);
-        fecha_ingreso = (TextView)v.findViewById(R.id.txtFechaEmpG);
+        guardar = (Button)v.findViewById(R.id.btnGuardarCli);
+        cancelar = (Button)v.findViewById(R.id.btnCancelarClienG);
+        codigo = (EditText)v.findViewById(R.id.txtCodigoClienG);
+        usuario = (EditText)v.findViewById(R.id.txtUsuarioClienG);
+        nombre = (EditText)v.findViewById(R.id.txtNombreClienG);
+        apellido = (EditText)v.findViewById(R.id.txtApellidosClienG);
+        telefono = (EditText)v.findViewById(R.id.txtTelefonoClienG);
+        fecha_ingreso = (TextView)v.findViewById(R.id.txtFechaClienG);
+        direccion = (EditText)v.findViewById(R.id.txtDireccClienG);
+        dui = (EditText) v.findViewById(R.id.editTextTextPersonName31);
         fecha_ingreso.setText(salida);
         guardar.setOnClickListener(onclick);
         cancelar.setOnClickListener(onclick);
@@ -53,7 +55,7 @@ public class GuardarCliente extends Fragment {
         public void onClick(View v) {
             switch (v.getId())
             {
-                case R.id.btnGuardarEmp:
+                case R.id.btnGuardarCli:
                     String resp;
                     mtoCliente cliente = new mtoCliente();
                     cliente.setId_cliente(Integer.parseInt(codigo.getText().toString()));
@@ -63,13 +65,14 @@ public class GuardarCliente extends Fragment {
                     cliente.setFecha_registro(salida);
                     cliente.setTelefono(telefono.getText().toString());
                     cliente.setDireccion(direccion.getText().toString());
+                    cliente.setDui(dui.getText().toString());
                     cn.abrir();
                     resp=cn.insertar(cliente);
                     cn.cerrar();
                     Toast.makeText(v.getContext(), resp, Toast.LENGTH_SHORT).show();
                     limpiarTxt();
                     break;
-                case R.id.btnCancelarEmp:
+                case R.id.btnCancelarClienG:
                     limpiarTxt();
                     break;
             }
@@ -78,10 +81,11 @@ public class GuardarCliente extends Fragment {
 
     private void limpiarTxt(){
         codigo.setText("");
-        usuario.setText("");
+                usuario.setText("");
         nombre.setText("");
-        apellido.setText("");
+                apellido.setText("");
         telefono.setText("");
-        direccion.setText("");
+                direccion.setText("");
+        dui.setText("");
     }
 }

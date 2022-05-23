@@ -42,9 +42,11 @@ public class GuardarUsuario extends Fragment {
                 case R.id.btnGuardarU:
                     String resp;
                     mtoUsuario usuario = new mtoUsuario();
+                    Toast.makeText(v.getContext(), "Llega", Toast.LENGTH_SHORT).show();
                     usuario.setUsuario(user.getText().toString());
                     usuario.setContra(pwd.getText().toString());
                     cn.abrir();
+                    Toast.makeText(v.getContext(), "entra", Toast.LENGTH_SHORT).show();
                     resp=cn.insertar(usuario);
                     cn.cerrar();
                     Toast.makeText(v.getContext(), resp, Toast.LENGTH_SHORT).show();
