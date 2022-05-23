@@ -25,90 +25,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lblTitulo"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="312dp"
-        android:text="ID Falla" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName9"
-        android:layout_width="wrap_content"
-        android:layout_height="23dp"
-        android:layout_below="@+id/lblTitulo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginEnd="69dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="304dp"
-        android:text="Descripcion" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="230dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/lblTitulo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="134dp"
-        android:layout_marginTop="143dp"
-        android:layout_marginEnd="47dp"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="91dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView16"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="87dp"
-        android:layout_marginEnd="287dp"
-        android:text="ID categoria falla" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="223dp"
-        android:layout_height="47dp"
-        android:layout_below="@+id/textView17"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="40dp"
-        android:text="" />
-
     <Button
-        android:id="@+id/btnCancelar"
+        android:id="@+id/btnCancelarFM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="50dp"
         android:layout_marginEnd="68dp"
         android:layout_marginBottom="84dp"
-        android:layout_toRightOf="@+id/btnGuardar"
+        android:layout_toRightOf="@+id/btnModificarF"
         android:backgroundTint="@color/rojo"
         android:text="@string/boton_cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/btnGuardar"
+        android:id="@+id/btnModificarF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -117,9 +49,72 @@
         android:layout_marginBottom="84dp"
         android:backgroundTint="@color/rojo"
         android:text="@string/boton_guardar"
-        app:layout_constraintEnd_toStartOf="@+id/btnCancelar"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelarFM"
         app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="507dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/id"
+        android:layout_below="@id/lblTitulo"
+        android:layout_marginTop="90sp"
+        android:layout_marginLeft="50sp"/>
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView20"
+        android:layout_marginLeft="50sp"
+        android:layout_marginTop="50sp"
+        android:text="@string/descripcion" />
+
+    <TextView
+        android:id="@+id/textView56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView55"
+        android:layout_marginLeft="40sp"
+        android:layout_marginTop="60sp"
+        android:text="@string/menu_categoria_falla" />
+
+    <EditText
+        android:id="@+id/txtCodigoFallaM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblTitulo"
+        android:layout_marginLeft="40sp"
+        android:layout_marginTop="80sp"
+        android:layout_toRightOf="@+id/textView20"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/txtDescripcionFM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCodigoFallaM"
+        android:layout_marginLeft="40sp"
+        android:layout_marginTop="30sp"
+        android:layout_toRightOf="@+id/textView55"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/txtCodigoFallaFM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDescripcionFM"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="30sp"
+        android:layout_toRightOf="@+id/textView56"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 </RelativeLayout>

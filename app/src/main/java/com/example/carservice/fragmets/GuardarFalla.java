@@ -9,10 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.carservice.R;
 import com.example.carservice.mto.Conexion;
-import com.example.carservice.mto.mtoCliente;
 import com.example.carservice.mto.mtoFalla;
 
 public class GuardarFalla extends Fragment {
@@ -32,7 +30,8 @@ public class GuardarFalla extends Fragment {
         codigo = (EditText) v.findViewById(R.id.txtCodigoFallaG);
         descripcion = (EditText) v.findViewById(R.id.txtDescripcion);
         cat = (EditText) v.findViewById(R.id.txtCodCatFG);
-
+        guardar.setOnClickListener(onclick);
+        cancelar.setOnClickListener(onclick);
         return v;
     }
 
